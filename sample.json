@@ -1,0 +1,11 @@
+{
+    "repos": {
+        "@fijo__git-glacier": "https://github.com/Fijo/git-glacier.git",
+        "@dotnet__reactive": "https://github.com/dotnet/reactive.git",
+        "@Cosmic-Shores__EcsRx.Plugins.UnityUx": "https://github.com/Cosmic-Shores/EcsRx.Plugins.UnityUx.git",
+        "@Cosmic-Shores__Rx.Unity": "https://github.com/Cosmic-Shores/Rx.Unity.git",
+        "@Cosmic-Shores__Rx.Data": "https://github.com/Cosmic-Shores/Rx.Data.git",
+        "@Cosmic-Shores__SystemsRx.Plugins.Runtime": "https://github.com/Cosmic-Shores/SystemsRx.Plugins.Runtime.git"
+    },
+    "cron": "*/2 * * * *"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@fijo/git-glacier",
+  "version": "1.0.0",
+  "description": "Maintaining backed up copies of all your favourite git repositories made easy  ",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "ts-node-dev ./src/index.ts ./sample.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fijo/git-glacier.git"
+  },
+  "author": "Jonas Fischer",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cron": "^1.7.3",
+    "ts-node": "^10.6.0",
+    "ts-node-dev": "^1.1.8"
+  },
+  "dependencies": {
+    "cron": "^1.8.2",
+    "glob": "^7.2.0",
+    "is-directory": "^0.3.1"
+  }
+}

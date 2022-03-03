@@ -2,9 +2,13 @@
   "name": "@fijo/git-glacier",
   "version": "1.0.0",
   "description": "Maintaining backed up copies of all your favourite git repositories made easy  ",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "ts-node-dev ./src/index.ts ./sample.json",
+    "start": "node ./dist/index.js",
+    "start:ts": "ts-node ./src/index.ts . ./sample.json",
+    "start:debug": "ts-node-dev . ./sample.json",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +20,8 @@
   "devDependencies": {
     "@types/cron": "^1.7.3",
     "ts-node": "^10.6.0",
-    "ts-node-dev": "^1.1.8"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "cron": "^1.8.2",

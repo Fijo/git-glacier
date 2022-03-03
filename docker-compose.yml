@@ -1,0 +1,12 @@
+version: '3'
+services:
+  git-glacier:
+    build: .
+    image: git-glacier
+    restart: unless-stopped
+    volumes:
+      - backup_repos:/root/repos
+      - ./sample.json:/root/config.json:ro
+
+volumes:
+  backup_repos:

@@ -7,15 +7,16 @@ const isDir = promisify(require('is-directory'));
 const path = require('path');
 const cron = require('cron').CronJob;
 
-const loadConfig = async (args: string[]): Promise<{repos: {[name: string]: string}, cron: string }> => {
-    const usageInfo = "Usage git-glacier myconfig.json.";
-    if (args.length == 0) {
+const loadConfig = async (args: string[]): Promise<{repos: {[name: string]: string}, cron: string, baseDir: string }> => {
+    const usageInfo = "Usage git-glacier base_dir myconfig.json.";
+    if (args.length <= 0) {
         console.error(`${usageInfo} No argument was supplied.`);
         process.exit(-1);
     }
-    const configPath = args[0];
+    const baseDir = args[0];
+    const configPath = path.join(baseDir, args[1]);
     try {
-        return JSON.parse(await fs.readFile(configPath, 'utf8'));
+        return { ...JSON.parse(await fs.readFile(configPath, 'utf8')), baseDir };
     }
     catch (ex) {
         console.error(`${usageInfo} Failed to read or parse config file '${configPath}'.`);
@@ -23,10 +24,10 @@ const loadConfig = async (args: string[]): Promise<{repos: {[name: string]: stri
     }
 };
 
-const main = async () => {    
+const main = async () => {
     const config = await loadConfig(process.argv.slice(2));
 
-    const repoPath = './repos';
+    const repoPath = path.join(config.baseDir, './repos');
     const cwd = path.join(process.cwd(), repoPath);
 
     if (!await isDir(repoPath))

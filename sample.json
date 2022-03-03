@@ -7,5 +7,5 @@
         "@Cosmic-Shores__Rx.Data": "https://github.com/Cosmic-Shores/Rx.Data.git",
         "@Cosmic-Shores__SystemsRx.Plugins.Runtime": "https://github.com/Cosmic-Shores/SystemsRx.Plugins.Runtime.git"
     },
-    "cron": "*/2 * * * *"
+    "cron": "*/30 * * * *"
 }

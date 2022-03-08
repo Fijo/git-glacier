@@ -4,9 +4,12 @@ services:
     build: .
     image: git-glacier
     restart: unless-stopped
+    ports:
+      - 9300:9300/tcp
     volumes:
       - backup_repos:/root/repos
       - ./sample.json:/root/config.json:ro
+      - ./.ssh:/root/.ssh:ro
 
 volumes:
   backup_repos:

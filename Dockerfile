@@ -25,5 +25,6 @@ COPY --from=builder /root/LICENSE ./
 COPY --from=builder /root/dist/ ./dist/
 
 VOLUME /root/repos
+EXPOSE 9300
 
 CMD ["npm", "run", "start", "--", "..", "config.json"]

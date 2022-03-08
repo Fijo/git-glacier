@@ -92,7 +92,7 @@ export class GlacierService {
         const labels = { repoName: repoName, action: action };
         this._begin.inc(labels);
         try {
-            const { stdout, stderr } = await exec(`git ${args}`, options);
+            const { stdout, stderr } = await exec(`git ${args}`, { timeout: this._config.atomicTimeout, ...options });
             if (stdout != undefined)
                 console.log(`${repoName} ${action}: ${stdout}`);
             if (stderr != undefined)

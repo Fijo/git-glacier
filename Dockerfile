@@ -15,6 +15,7 @@ RUN apk --update add git git-lfs less openssh && \
     git lfs install && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
+RUN git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 WORKDIR /root/app
 

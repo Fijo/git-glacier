@@ -1,4 +1,5 @@
 node_modules/
+.ssh/
 repos/
 dist/
 sample.json

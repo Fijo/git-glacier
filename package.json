@@ -1,5 +1,5 @@
 {
-  "name": "@fijo/git-glacier",
+  "name": "git-glacier",
   "version": "1.0.0",
   "description": "Maintaining backed up copies of all your favourite git repositories made easy  ",
   "main": "dist/index.js",
